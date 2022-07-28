@@ -1,10 +1,12 @@
 import logo from "../Assets/icon.png";
 import { useContext, useState } from "react";
 import MyContext from "../MyContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { setUser } = useContext(MyContext);
   const [nome, setNome] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="login">
@@ -22,7 +24,12 @@ function Login() {
         />
         <button
           onClick={() => {
-            setUser(nome);
+            if (nome === "") {
+              alert("Preencha o campo de nome.");
+            } else {
+              setUser(nome);
+              navigate("/order");
+            }
           }}
         >
           Entrar
