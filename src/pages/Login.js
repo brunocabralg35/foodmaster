@@ -1,4 +1,4 @@
-import logo from "../Assets/icon.png";
+import logo from "../Assets/images/icon.png";
 import { useContext, useState } from "react";
 import MyContext from "../MyContext";
 import { useNavigate } from "react-router-dom";

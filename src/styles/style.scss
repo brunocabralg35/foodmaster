@@ -95,4 +95,56 @@ body {
   }
 }
 
+.order{
+
+
+  .food{
+    display: flex;
+    flex-direction: column;
+    .cards{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $background;
+        height: 280px;
+        width: 230px;
+        overflow: hidden;
+        border-radius: 8px;
+        padding: 20px;
+        position: relative;
+
+        h1{
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+
+        p{
+          font-size: 12px;
+          margin-bottom: 20px;
+          opacity: 0.5;
+
+          &:last-of-type{
+            bottom: 0;
+            font-size: 20px;
+            color: $primary;
+            position: absolute;
+            margin-bottom: 15px;
+            opacity: 1;
+          }
+        }
+
+        img{
+          align-self: center;
+          width: 100%;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
 

@@ -1,124 +1,114 @@
 [
-  [
-    {
-      "type": "bebidas",
-      "name": "Coca-cola",
-      "description": "Lata 350ml",
-      "price": 4.5,
-      "oferta": false,
-      "image": "./bebidas/bebidas1.png"
-    },
-    {
-      "type": "bebidas",
-      "name": "Guaraná",
-      "description": "Lata 350ml",
-      "price": 4,
-      "oferta": false,
-      "image": "./bebidas/bebidas2.png"
-    }
-  ],
-  [
-    {
-      "type": "burguers",
-      "name": "Triplo Burguer",
-      "description": "Pão, maionese, 3 carnes de 180g, alface, tomate, bacon e cebola roxa",
-      "price": 32,
-      "oferta": true,
-      "image": "./burguers/burguer1.png"
-    },
-    {
-      "type": "burguers",
-      "name": "Chicken Burguer",
-      "description": "Pão, maionese, carne de frango, alface, tomate e queijo",
-      "price": 16.3,
-      "oferta": false,
-      "image": "./burguers/burguer2.png"
-    },
-    {
-      "type": "burguers",
-      "name": "Duplo Burguer",
-      "description": "Pão, maionese, 3 carnes de 180g, alface, tomate, bacon e cebola roxa",
-      "price": 27,
-      "oferta": true,
-      "image": "./burguers/burguer3.png"
-    },
-    {
-      "type": "burguers",
-      "name": "Picanha Burguer",
-      "description": "Pão, maionese, 1 hamburguer de picanha, alface e tomate",
-      "price": 40.3,
-      "oferta": false,
-      "image": "./burguers/burguer4.png"
-    }
-  ],
-  [
-    {
-      "type": "combos",
-      "name": "Combo 1",
-      "description": "1 hamburguer duplo, 1 guaraná lata e 1 milkshake chocolate",
-      "price": 50,
-      "oferta": false,
-      "image": "./combos/combo1.png"
-    },
-    {
-      "type": "combos",
-      "name": "Combo 2",
-      "description": "2 pizzas",
-      "price": 45,
-      "oferta": false,
-      "image": "./combos/combo2.png"
-    }
-  ],
-  [
-    {
-      "type": "doces",
-      "name": "Casquinha Mista",
-      "description": "Casquinha mista de creme e chocolate",
-      "price": 4.5,
-      "oferta": false,
-      "image": "./doces/doce1.png"
-    },
-    {
-      "type": "doces",
-      "name": "Sorvete de Morango",
-      "description": "Sorvete de morango na casquinha",
-      "price": 6,
-      "oferta": false,
-      "image": "./doces/doce2.png"
-    },
-    {
-      "type": "doces",
-      "name": "Milkshake",
-      "description": "Milkshake de chocolate",
-      "price": 10,
-      "oferta": false,
-      "image": "./doces/doce3.png"
-    }
-  ],
-  [
-    {
-      "type": "pizzas",
-      "name": "Calabresa",
-      "description": "Molho de tomate, calabresa e queijo",
-      "price": 25,
-      "oferta": false,
-      "image": "./pizza/pizza1.png"
-    },
-    {
-      "type": "pizzas",
-      "name": "4 Queijos",
-      "description": "Molho de tomate e 4 queijos",
-      "price": 27,
-      "oferta": false,
-      "image": "./pizza/pizza2.png"
-    },
-    {
-      "type": "pizzas",
-      "name": "Strogonoff",
-      "description": "Molho de tomate e strogonoff de frango",
-      "price": 29,
-      "oferta": false,
-      "image": "./pizza/pizza3.png"
-    }
-  ]
+  {
+    "type": "bebidas",
+    "name": "Coca-cola",
+    "description": "Lata 350ml",
+    "price": 4.5,
+    "oferta": false,
+    "image": "bebidas/bebidas1.png"
+  },
+  {
+    "type": "bebidas",
+    "name": "Guaraná",
+    "description": "Lata 350ml",
+    "price": 4,
+    "oferta": false,
+    "image": "bebidas/bebidas2.png"
+  },
+  {
+    "type": "burguers",
+    "name": "Triplo Burguer",
+    "description": "Pão, maionese, 3 carnes de 180g, alface, tomate, bacon e cebola roxa",
+    "price": 32,
+    "oferta": true,
+    "image": "burguers/burguer1.png"
+  },
+  {
+    "type": "burguers",
+    "name": "Chicken Burguer",
+    "description": "Pão, maionese, carne de frango, alface, tomate e queijo",
+    "price": 16.3,
+    "oferta": false,
+    "image": "burguers/burguer2.png"
+  },
+  {
+    "type": "burguers",
+    "name": "Duplo Burguer",
+    "description": "Pão, maionese, 3 carnes de 180g, alface, tomate, bacon e cebola roxa",
+    "price": 27,
+    "oferta": true,
+    "image": "burguers/burguer3.png"
+  },
+  {
+    "type": "burguers",
+    "name": "Picanha Burguer",
+    "description": "Pão, maionese, 1 hamburguer de picanha, alface e tomate",
+    "price": 40.3,
+    "oferta": false,
+    "image": "burguers/burguer4.png"
+  },
+  {
+    "type": "combos",
+    "name": "Combo 1",
+    "description": "1 hamburguer duplo, 1 guaraná lata e 1 milkshake chocolate",
+    "price": 50,
+    "oferta": false,
+    "image": "combos/combo1.png"
+  },
+  {
+    "type": "combos",
+    "name": "Combo 2",
+    "description": "2 pizzas",
+    "price": 45,
+    "oferta": false,
+    "image": "combos/combo2.png"
+  },
+  {
+    "type": "doces",
+    "name": "Casquinha Mista",
+    "description": "Casquinha mista de creme e chocolate",
+    "price": 4.5,
+    "oferta": false,
+    "image": "doces/doce1.png"
+  },
+  {
+    "type": "doces",
+    "name": "Sorvete de Morango",
+    "description": "Sorvete de morango na casquinha",
+    "price": 6,
+    "oferta": false,
+    "image": "doces/doce2.png"
+  },
+  {
+    "type": "doces",
+    "name": "Milkshake",
+    "description": "Milkshake de chocolate",
+    "price": 10,
+    "oferta": false,
+    "image": "doces/doce3.png"
+  },
+  {
+    "type": "pizzas",
+    "name": "Calabresa",
+    "description": "Molho de tomate, calabresa e queijo",
+    "price": 25,
+    "oferta": false,
+    "image": "pizza/pizza1.png"
+  },
+  {
+    "type": "pizzas",
+    "name": "4 Queijos",
+    "description": "Molho de tomate e 4 queijos",
+    "price": 27,
+    "oferta": false,
+    "image": "pizza/pizza2.png"
+  },
+  {
+    "type": "pizzas",
+    "name": "Strogonoff",
+    "description": "Molho de tomate e strogonoff de frango",
+    "price": 29,
+    "oferta": false,
+    "image": "pizza/pizza3.png"
+  }
 ]
