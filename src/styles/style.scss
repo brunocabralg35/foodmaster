@@ -26,6 +26,7 @@ $textDark: #fafafa;
 body {
   background-image: url("../Assets/images/background_login.jpg");
   background-size: cover;
+  height: 100vh;
 }
 
 .login {
@@ -95,18 +96,50 @@ body {
   }
 }
 
-.order{
+.order {
+  display: flex;
 
-
-  .food{
+  .menu {
     display: flex;
     flex-direction: column;
-    .cards{
+    background-color: $background;
+    width: 10%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    input {
+      display: none;
+    }
+
+    input[type="radio"]:checked + label {
+      color: $hover_primary;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: $backgroundDark2;
+      cursor: pointer;
+    }
+  }
+
+  .food {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 40px;
+    width: 60%;
+
+    .cards {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
 
-      .card{
+      .card {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -117,18 +150,24 @@ body {
         border-radius: 8px;
         padding: 20px;
         position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
-        h1{
+        &:hover {
+          box-shadow: 5px 5px 15px black;
+        }
+
+        h1 {
           font-size: 20px;
           margin-bottom: 5px;
         }
 
-        p{
+        p {
           font-size: 12px;
           margin-bottom: 20px;
           opacity: 0.5;
 
-          &:last-of-type{
+          &:last-of-type {
             bottom: 0;
             font-size: 20px;
             color: $primary;
@@ -138,7 +177,7 @@ body {
           }
         }
 
-        img{
+        img {
           align-self: center;
           width: 100%;
           margin-bottom: 15px;
@@ -146,5 +185,14 @@ body {
       }
     }
   }
-}
 
+  .cart {
+    background-color: $background;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-top: 40px;
+  }
+}

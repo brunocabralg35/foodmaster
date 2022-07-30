@@ -9,6 +9,7 @@
 body {
   background-image: url("../Assets/images/background_login.jpg");
   background-size: cover;
+  height: 100vh;
 }
 
 .login {
@@ -69,9 +70,39 @@ body {
   background-color: #f9628a;
 }
 
+.order {
+  display: flex;
+}
+.order .menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  width: 10%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.order .menu input {
+  display: none;
+}
+.order .menu input[type=radio]:checked + label {
+  color: #cc950c;
+}
+.order .menu label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+}
 .order .food {
   display: flex;
   flex-direction: column;
+  margin: 40px 40px;
+  width: 60%;
 }
 .order .food .cards {
   display: flex;
@@ -89,6 +120,11 @@ body {
   border-radius: 8px;
   padding: 20px;
   position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.order .food .cards .card:hover {
+  box-shadow: 5px 5px 15px black;
 }
 .order .food .cards .card h1 {
   font-size: 20px;
@@ -111,4 +147,13 @@ body {
   align-self: center;
   width: 100%;
   margin-bottom: 15px;
+}
+.order .cart {
+  background-color: #fafafa;
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 40px;
 }/*# sourceMappingURL=style.css.map */
