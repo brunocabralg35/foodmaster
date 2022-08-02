@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./Login";
 import Order from "./Order";
-import Cart from "./Cart";
+import Cart from "../components/Cart";
 
 function Pages() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/order" element={<Order />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route exact path="/" element={<Login />} />
+      <Route exact path="/order" element={<Order />} />
+      {/* <Route path="/cart" element={<Cart />} /> */}
+      <Route path="*" element={<Login />} />
     </Routes>
   );
 }
