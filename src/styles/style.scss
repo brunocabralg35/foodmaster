@@ -215,14 +215,14 @@ body {
         height: 66%;
         overflow: auto;
 
-        .cartItem{
+        .cartItem {
           display: flex;
-          align-items:  center;
+          align-items: center;
           padding: 20px;
           border-bottom: 1px solid rgb(196, 196, 196);
           position: relative;
 
-          p{
+          p {
             font-size: 20px;
             color: $primary;
             position: absolute;
@@ -230,8 +230,38 @@ body {
             margin-right: 20px;
           }
 
-          img{
+          img {
             width: 80px;
+          }
+        }
+      }
+
+      .info-total {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        margin-top: 20px;
+
+        p {
+          color: $primary;
+          font-size: 20px;
+        }
+
+        button {
+          margin-top: 20px;
+          width: 80%;
+          height: 45px;
+          border: none;
+          border-radius: 8px;
+          background-color: $second;
+          color: #fafafa;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-size: 17px;
+
+          &:hover {
+            background-color: $hover_second;
           }
         }
       }

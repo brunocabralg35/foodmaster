@@ -6,12 +6,19 @@ export function MyProvider({ children }) {
   const [user, setUser] = useState("");
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (name, price, image) => {
-    setCartItems((prevState) => [...prevState, { name, price, image }]);
+  const addToCart = (name, price, image, qntd) => {
+    for (let i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].name.includes(name)) {
+        cartItems[i].qntd += 1;
+        setCartItems((prevState) => [...prevState]);
+        return;
+      }
+    }
+    setCartItems((prevState) => [...prevState, { name, price, image, qntd }]);
   };
 
   return (
-    <MyContext.Provider value={{ user, setUser, addToCart, cartItems}}>
+    <MyContext.Provider value={{ user, setUser, addToCart, cartItems }}>
       {children}
     </MyContext.Provider>
   );

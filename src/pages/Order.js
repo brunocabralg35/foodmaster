@@ -26,7 +26,7 @@ function Order() {
           checked={selected === "pizzas"}
           onChange={handleMenuChange}
         />
-        <label for="pizzas">
+        <label htmlFor="pizzas">
           <FaPizzaSlice size={30} />
           Pizza
         </label>
@@ -38,7 +38,7 @@ function Order() {
           checked={selected === "bebidas"}
           onChange={handleMenuChange}
         />
-        <label for="bebidas">
+        <label htmlFor="bebidas">
           <BiDrink size={30} />
           Bebidas
         </label>
@@ -50,7 +50,7 @@ function Order() {
           checked={selected === "doces"}
           onChange={handleMenuChange}
         />
-        <label for="doces">
+        <label htmlFor="doces">
           <FaCandyCane size={30} />
           Doces
         </label>
@@ -62,7 +62,7 @@ function Order() {
           checked={selected === "combos"}
           onChange={handleMenuChange}
         />
-        <label for="combos">
+        <label htmlFor="combos">
           <GiFrenchFries size={30} />
           Combos
         </label>
@@ -74,7 +74,7 @@ function Order() {
           checked={selected === "burguers"}
           onChange={handleMenuChange}
         />
-        <label for="burguers">
+        <label htmlFor="burguers">
           <FaHamburger size={30} />
           Burguers
         </label>
@@ -91,7 +91,7 @@ function Order() {
                   className="card"
                   key={index}
                   onClick={() => {
-                    addToCart(db.name, db.price, db.image);
+                    addToCart(db.name, db.price, db.image, 1);
                   }}
                 >
                   <img src={require("../Assets/images/" + db.image)}></img>

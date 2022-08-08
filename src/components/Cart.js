@@ -5,6 +5,19 @@ function Cart() {
   const { user } = useContext(MyContext);
   const { cartItems } = useContext(MyContext);
 
+  function getFinalPrice() {
+    let soma = 0;
+    if (cartItems.length === 0) {
+      return soma;
+    } else {
+      for (let i = 0; i < cartItems.length; i++) {
+        soma += cartItems[i].price;
+      }
+      let maskPrice = soma.toFixed(2);
+      return maskPrice.replace(".", ",");
+    }
+  }
+
   return (
     <div className="cart-page">
       <div className="cart">
@@ -19,7 +32,7 @@ function Cart() {
               let maskPrice = cartItem.price.toFixed(2);
               return (
                 <div className="cartItem" key={index}>
-                  <div className="quantidade"></div>
+                  <div className="quantidade">{cartItem.qntd}</div>
                   <img
                     src={require("../Assets/images/" + cartItem.image)}
                   ></img>
@@ -30,6 +43,15 @@ function Cart() {
             })
           )}
         </div>
+
+        {cartItems.length === 0 ? (
+          <p></p>
+        ) : (
+          <div className="info-total">
+            <p>Total: R${getFinalPrice()}</p>
+            <button>Finalizar compra</button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -192,4 +192,30 @@ body {
 }
 .order .cart-page .cart .listedCartItems .cartItem img {
   width: 80px;
+}
+.order .cart-page .cart .info-total {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+.order .cart-page .cart .info-total p {
+  color: #fdc844;
+  font-size: 20px;
+}
+.order .cart-page .cart .info-total button {
+  margin-top: 20px;
+  width: 80%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff2351;
+  color: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 17px;
+}
+.order .cart-page .cart .info-total button:hover {
+  background-color: #f9628a;
 }/*# sourceMappingURL=style.css.map */
