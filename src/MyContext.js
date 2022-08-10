@@ -10,6 +10,7 @@ export function MyProvider({ children }) {
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].name.includes(name)) {
         cartItems[i].qntd += 1;
+        cartItems[i].price = price * cartItems[i].qntd;
         setCartItems((prevState) => [...prevState]);
         return;
       }

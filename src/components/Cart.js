@@ -31,12 +31,22 @@ function Cart() {
             cartItems.map((cartItem, index) => {
               let maskPrice = cartItem.price.toFixed(2);
               return (
-                <div className="cartItem" key={index}>
-                  <div className="quantidade">{cartItem.qntd}</div>
-                  <img
-                    src={require("../Assets/images/" + cartItem.image)}
-                  ></img>
-                  <h3>{cartItem.name}</h3>
+                <div data-aos="fade-right" className="cartItem" key={index}>
+                  <div className="quantidade">
+                    <span>-</span>
+                    <div>{cartItem.qntd}</div>
+                    <span>+</span>
+                  </div>
+                  <div className="rect">
+                    <img
+                      src={require("../Assets/images/" + cartItem.image)}
+                    ></img>
+                  </div>
+                  <div className="rect-name">
+                    <h3>{cartItem.name}</h3>
+                    <button>Adicione observação</button>
+                  </div>
+
                   <p>R${maskPrice.replace(".", ",")}</p>
                 </div>
               );

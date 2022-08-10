@@ -188,7 +188,7 @@ body {
 
   .cart-page {
     background-color: #f9628a;
-    width: 40%;
+    width: 60%;
     .cart {
       background-color: $background;
       width: 100%;
@@ -222,6 +222,27 @@ body {
           border-bottom: 1px solid rgb(196, 196, 196);
           position: relative;
 
+          .quantidade {
+            display: flex;
+            width: 60px;
+            justify-content: space-around;
+            font-size: 20px;
+            align-items: center;
+
+            div {
+              color: $primary;
+            }
+
+            span {
+              cursor: pointer;
+              transition: all 0.3s ease;
+
+              &:hover {
+                opacity: 0.6;
+              }
+            }
+          }
+
           p {
             font-size: 20px;
             color: $primary;
@@ -230,8 +251,35 @@ body {
             margin-right: 20px;
           }
 
-          img {
-            width: 80px;
+          .rect {
+            background-color: #ffe7ab;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            border-radius: 10px;
+            margin-right: 15px;
+            margin-left: 10px;
+
+            img {
+              width: 80px;
+            }
+          }
+
+          .rect-name {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            button {
+              background: none;
+              border: none;
+              color: #959595;
+              text-decoration: underline;
+              cursor: pointer;
+            }
           }
         }
       }
