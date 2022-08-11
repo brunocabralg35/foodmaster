@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import MyContext from "../MyContext";
 
 function Cart() {
   const { user } = useContext(MyContext);
-  const { cartItems } = useContext(MyContext);
+  const { cartItems, addToCart, removeFromCart } = useContext(MyContext);
 
   function getFinalPrice() {
     let soma = 0;
@@ -33,9 +33,31 @@ function Cart() {
               return (
                 <div data-aos="fade-right" className="cartItem" key={index}>
                   <div className="quantidade">
-                    <span>-</span>
+                    <span
+                      onClick={() => {
+                        removeFromCart(
+                          cartItem.name,
+                          cartItem.price / cartItem.qntd,
+                          cartItem.image,
+                          1
+                        );
+                      }}
+                    >
+                      -
+                    </span>
                     <div>{cartItem.qntd}</div>
-                    <span>+</span>
+                    <span
+                      onClick={() => {
+                        addToCart(
+                          cartItem.name,
+                          cartItem.price / cartItem.qntd,
+                          cartItem.image,
+                          1
+                        );
+                      }}
+                    >
+                      +
+                    </span>
                   </div>
                   <div className="rect">
                     <img

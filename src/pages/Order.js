@@ -7,7 +7,6 @@ import { BiDrink } from "react-icons/bi";
 import Cart from "../components/Cart";
 
 function Order() {
-  const { user } = useContext(MyContext);
   const { addToCart } = useContext(MyContext);
   const [selected, setSelected] = useState("pizzas");
 
