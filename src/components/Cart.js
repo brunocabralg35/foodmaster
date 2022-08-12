@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import MyContext from "../MyContext";
 
 function Cart() {
@@ -31,7 +31,7 @@ function Cart() {
             cartItems.map((cartItem, index) => {
               let maskPrice = cartItem.price.toFixed(2);
               return (
-                <div data-aos="fade-right" className="cartItem" key={index}>
+                <div className="cartItem" key={index}>
                   <div className="quantidade">
                     <span
                       onClick={() => {
