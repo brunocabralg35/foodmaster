@@ -1,9 +1,12 @@
 import { useContext, useState } from "react";
 import MyContext from "../MyContext";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function Cart() {
   const { user } = useContext(MyContext);
   const { cartItems, addToCart, removeFromCart } = useContext(MyContext);
+
+  const [confirmModal, setConfirmModal] = useState(false);
 
   function getFinalPrice() {
     let soma = 0;
@@ -18,8 +21,39 @@ function Cart() {
     }
   }
 
+  function confirmRemoval(x) {
+    return x;
+  }
+
   return (
     <div className="cart-page">
+      {!confirmModal ? (
+        <span></span>
+      ) : (
+        <div className="bg-modal">
+          <div className="modal-delete">
+            <AiFillCloseCircle
+              size={30}
+              className="close-btn"
+              onClick={() => {
+                setConfirmModal(false);
+              }}
+            />
+            <h2>Deseja remover esse item do carrinho?</h2>
+            <div>
+              <button
+                onClick={() => {
+                  setConfirmModal(false);
+                }}
+              >
+                Cancelar
+              </button>
+              <button onClick={confirmRemoval(true)}>Sim, remover</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="cart">
         <h1>Olá, {user}</h1>
         <h2>Seu pedido</h2>
@@ -35,12 +69,16 @@ function Cart() {
                   <div className="quantidade">
                     <span
                       onClick={() => {
-                        removeFromCart(
-                          cartItem.name,
-                          cartItem.price / cartItem.qntd,
-                          cartItem.image,
-                          1
-                        );
+                        if (cartItem.qntd > 1) {
+                          removeFromCart(
+                            cartItem.name,
+                            cartItem.price / cartItem.qntd,
+                            cartItem.image,
+                            1
+                          );
+                        } else {
+                          setConfirmModal(true);
+                        }
                       }}
                     >
                       -

@@ -152,6 +152,63 @@ body {
   background-color: #f9628a;
   width: 60%;
 }
+.order .cart-page .bg-modal {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(56, 54, 54, 0.4784313725);
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order .cart-page .bg-modal .modal-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 200px;
+  width: 500px;
+  position: relative;
+  border-radius: 8px;
+}
+.order .cart-page .bg-modal .modal-delete .close-btn {
+  position: absolute;
+  right: -6px;
+  top: -10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.order .cart-page .bg-modal .modal-delete .close-btn:hover {
+  opacity: 0.8;
+}
+.order .cart-page .bg-modal .modal-delete button {
+  margin-top: 20px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff2351;
+  color: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  margin: 20px 7px 7px 0;
+}
+.order .cart-page .bg-modal .modal-delete button:first-of-type {
+  background-color: transparent;
+  color: #f9628a;
+  border: 1px solid #ff2351;
+}
+.order .cart-page .bg-modal .modal-delete button:hover {
+  background-color: #f9628a;
+  color: #ffffff;
+}
 .order .cart-page .cart {
   background-color: #fafafa;
   width: 100%;

@@ -189,6 +189,71 @@ body {
   .cart-page {
     background-color: #f9628a;
     width: 60%;
+
+    .bg-modal {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: #3836367a;
+      top: 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .modal-delete {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $background2;
+        height: 200px;
+        width: 500px;
+        position: relative;
+        border-radius: 8px;
+
+        .close-btn {
+          position: absolute;
+          right: -6px;
+          top: -10px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        button {
+          margin-top: 20px;
+          width: 120px;
+          height: 40px;
+          border: none;
+          border-radius: 8px;
+          background-color: $second;
+          color: #fafafa;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-size: 13px;
+          margin: 20px 7px 7px 0;
+
+          &:first-of-type {
+            background-color: transparent;
+            color: $hover_second;
+            border: 1px solid $second;
+          }
+
+          &:hover {
+            background-color: $hover_second;
+            color: $background2;
+          }
+        }
+      }
+    }
+
     .cart {
       background-color: $background;
       width: 100%;
