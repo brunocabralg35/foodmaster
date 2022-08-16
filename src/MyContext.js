@@ -21,7 +21,7 @@ export function MyProvider({ children }) {
     }
   };
 
-  const addToCart = (name, price, image, qntd) => {
+  const addToCart = (name, price, image, qntd, obs) => {
     for (let i = 0; i < cartItems.length; i++) {
       if (cartItems[i].name.includes(name)) {
         cartItems[i].qntd += 1;
@@ -30,7 +30,7 @@ export function MyProvider({ children }) {
         return;
       }
     }
-    setCartItems((prevState) => [...prevState, { name, price, image, qntd }]);
+    setCartItems((prevState) => [...prevState, { name, price, image, qntd, obs }]);
   };
 
   return (

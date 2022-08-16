@@ -90,7 +90,7 @@ function Order() {
                   className="card"
                   key={index}
                   onClick={() => {
-                    addToCart(db.name, db.price, db.image, 1);
+                    addToCart(db.name, db.price, db.image, 1, "");
                   }}
                 >
                   <img src={require("../Assets/images/" + db.image)}></img>
