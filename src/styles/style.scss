@@ -185,217 +185,290 @@ body {
       }
     }
   }
+}
 
-  .cart-page {
-    background-color: #f9628a;
-    width: 60%;
+.cart-page {
+  background-color: #f9628a;
+  width: 60%;
 
-    .bg-modal {
-      z-index: 1;
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      background-color: #3836367a;
-      top: 0;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      bottom: 0;
+  .bg-modal {
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #3836367a;
+    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-delete {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      background-color: $background2;
+      height: 200px;
+      width: 500px;
+      position: relative;
+      border-radius: 8px;
 
-      .modal-delete {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: $background2;
-        height: 200px;
-        width: 500px;
-        position: relative;
-        border-radius: 8px;
+      .close-btn {
+        position: absolute;
+        right: -6px;
+        top: -10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
-        .close-btn {
-          position: absolute;
-          right: -6px;
-          top: -10px;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-
-          &:hover {
-            opacity: 0.8;
-          }
-        }
-
-        button {
-          margin-top: 20px;
-          width: 120px;
-          height: 40px;
-          border: none;
-          border-radius: 8px;
-          background-color: $second;
-          color: #fafafa;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-size: 13px;
-          margin: 20px 7px 7px 0;
-
-          &:first-of-type {
-            background-color: transparent;
-            color: $hover_second;
-            border: 1px solid $second;
-          }
-
-          &:hover {
-            background-color: $hover_second;
-            color: $background2;
-          }
+        &:hover {
+          opacity: 0.8;
         }
       }
 
-      .modal-obs {
-        height: 400px;
-        width: 600px;
+      button {
+        margin-top: 20px;
+        width: 120px;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        background-color: $second;
+        color: #fafafa;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 13px;
+        margin: 20px 7px 7px 0;
 
-        textarea {
-          width: 80%;
-          height: 50%;
-          margin-top: 20px;
-          padding: 15px;
+        &:first-of-type {
+          background-color: transparent;
+          color: $hover_second;
+          border: 1px solid $second;
+        }
+
+        &:hover {
+          background-color: $hover_second;
+          color: $background2;
         }
       }
     }
 
-    .cart {
-      background-color: $background;
-      width: 100%;
-      height: 100vh;
+    .modal-obs {
+      height: 400px;
+      width: 600px;
+
+      textarea {
+        width: 80%;
+        height: 50%;
+        margin-top: 20px;
+        padding: 15px;
+      }
+    }
+  }
+
+  .cart {
+    background-color: $background;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 40px;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .listedCartItems {
+      margin-top: 30px;
       display: flex;
       flex-direction: column;
-      padding-left: 30px;
-      padding-right: 20px;
-      padding-top: 40px;
+      gap: 20px;
+      height: 66%;
+      overflow: auto;
 
-      h1 {
-        margin-bottom: 10px;
+      .cartItem {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgb(196, 196, 196);
+        position: relative;
+        animation: fadeInLeft 0.5s ease-in-out alternate;
+
+        .obs {
+          font-size: 13px;
+          color: #959595;
+        }
+
+        .quantidade {
+          display: flex;
+          width: 60px;
+          justify-content: space-around;
+          font-size: 20px;
+          align-items: center;
+
+          div {
+            color: $primary;
+          }
+
+          span {
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+
+        p {
+          font-size: 20px;
+          color: $primary;
+          position: absolute;
+          right: 0;
+          margin-right: 20px;
+        }
+
+        .rect {
+          background-color: #ffe7ab;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          border-radius: 10px;
+          margin-right: 15px;
+          margin-left: 10px;
+
+          img {
+            width: 80px;
+          }
+        }
+
+        .rect-name {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          button {
+            background: none;
+            border: none;
+            color: #959595;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
       }
+    }
 
-      h2 {
+    .info-total {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 25px;
+
+      p {
+        color: $primary;
         font-size: 20px;
       }
 
-      .listedCartItems {
-        margin-top: 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        height: 66%;
-        overflow: auto;
+      button {
+        margin-top: 20px;
+        width: 80%;
+        height: 45px;
+        border: none;
+        border-radius: 8px;
+        background-color: $second;
+        color: #fafafa;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 17px;
 
-        .cartItem {
-          display: flex;
-          align-items: center;
-          padding: 20px;
-          border-bottom: 1px solid rgb(196, 196, 196);
-          position: relative;
-          animation: fadeInLeft 0.5s ease-in-out alternate;
-
-          .obs {
-            font-size: 13px;
-            color: #959595;
-          }
-
-          .quantidade {
-            display: flex;
-            width: 60px;
-            justify-content: space-around;
-            font-size: 20px;
-            align-items: center;
-
-            div {
-              color: $primary;
-            }
-
-            span {
-              cursor: pointer;
-              transition: all 0.3s ease;
-
-              &:hover {
-                opacity: 0.6;
-              }
-            }
-          }
-
-          p {
-            font-size: 20px;
-            color: $primary;
-            position: absolute;
-            right: 0;
-            margin-right: 20px;
-          }
-
-          .rect {
-            background-color: #ffe7ab;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            border-radius: 10px;
-            margin-right: 15px;
-            margin-left: 10px;
-
-            img {
-              width: 80px;
-            }
-          }
-
-          .rect-name {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            button {
-              background: none;
-              border: none;
-              color: #959595;
-              text-decoration: underline;
-              cursor: pointer;
-            }
-          }
+        &:hover {
+          background-color: $hover_second;
         }
       }
+    }
+  }
+}
 
-      .info-total {
+.payment {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  .column-pay {
+    width: 50%;
+    color: $background2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 45px;
+    align-items: center;
+
+    span {
+      display: flex;
+      margin-bottom: 10px;
+      gap: 3px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      width: 70px;
+      align-self: flex-start;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .form-pay {
+      background-color: $background;
+      width: 100%;
+      align-self: center;
+      border-radius: 5px;
+      color: $text;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      gap: 10px;
+
+      input[type="text"],input[type="tel"] {
+        width: 60%;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid black;
+      }
+
+      .pagamento, .endereco{
         display: flex;
-        flex-direction: column;
-        padding: 10px;
+        gap: 10px;
         align-items: center;
+      }
+
+      button {
         margin-top: 20px;
-        margin-bottom: 25px;
+        width: 40%;
+        height: 45px;
+        border: none;
+        border-radius: 8px;
+        background-color: $second;
+        color: #fafafa;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 17px;
 
-        p {
-          color: $primary;
-          font-size: 20px;
-        }
-
-        button {
-          margin-top: 20px;
-          width: 80%;
-          height: 45px;
-          border: none;
-          border-radius: 8px;
-          background-color: $second;
-          color: #fafafa;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-size: 17px;
-
-          &:hover {
-            background-color: $hover_second;
-          }
+        &:hover {
+          background-color: $hover_second;
         }
       }
     }

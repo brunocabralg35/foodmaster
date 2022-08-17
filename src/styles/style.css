@@ -148,11 +148,12 @@ body {
   width: 100%;
   margin-bottom: 15px;
 }
-.order .cart-page {
+
+.cart-page {
   background-color: #f9628a;
   width: 60%;
 }
-.order .cart-page .bg-modal {
+.cart-page .bg-modal {
   z-index: 1;
   position: absolute;
   height: 100vh;
@@ -167,7 +168,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.order .cart-page .bg-modal .modal-delete {
+.cart-page .bg-modal .modal-delete {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,17 +179,17 @@ body {
   position: relative;
   border-radius: 8px;
 }
-.order .cart-page .bg-modal .modal-delete .close-btn {
+.cart-page .bg-modal .modal-delete .close-btn {
   position: absolute;
   right: -6px;
   top: -10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.order .cart-page .bg-modal .modal-delete .close-btn:hover {
+.cart-page .bg-modal .modal-delete .close-btn:hover {
   opacity: 0.8;
 }
-.order .cart-page .bg-modal .modal-delete button {
+.cart-page .bg-modal .modal-delete button {
   margin-top: 20px;
   width: 120px;
   height: 40px;
@@ -201,26 +202,26 @@ body {
   font-size: 13px;
   margin: 20px 7px 7px 0;
 }
-.order .cart-page .bg-modal .modal-delete button:first-of-type {
+.cart-page .bg-modal .modal-delete button:first-of-type {
   background-color: transparent;
   color: #f9628a;
   border: 1px solid #ff2351;
 }
-.order .cart-page .bg-modal .modal-delete button:hover {
+.cart-page .bg-modal .modal-delete button:hover {
   background-color: #f9628a;
   color: #ffffff;
 }
-.order .cart-page .bg-modal .modal-obs {
+.cart-page .bg-modal .modal-obs {
   height: 400px;
   width: 600px;
 }
-.order .cart-page .bg-modal .modal-obs textarea {
+.cart-page .bg-modal .modal-obs textarea {
   width: 80%;
   height: 50%;
   margin-top: 20px;
   padding: 15px;
 }
-.order .cart-page .cart {
+.cart-page .cart {
   background-color: #fafafa;
   width: 100%;
   height: 100vh;
@@ -230,13 +231,13 @@ body {
   padding-right: 20px;
   padding-top: 40px;
 }
-.order .cart-page .cart h1 {
+.cart-page .cart h1 {
   margin-bottom: 10px;
 }
-.order .cart-page .cart h2 {
+.cart-page .cart h2 {
   font-size: 20px;
 }
-.order .cart-page .cart .listedCartItems {
+.cart-page .cart .listedCartItems {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -244,7 +245,7 @@ body {
   height: 66%;
   overflow: auto;
 }
-.order .cart-page .cart .listedCartItems .cartItem {
+.cart-page .cart .listedCartItems .cartItem {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -253,35 +254,35 @@ body {
   -webkit-animation: fadeInLeft 0.5s ease-in-out alternate;
           animation: fadeInLeft 0.5s ease-in-out alternate;
 }
-.order .cart-page .cart .listedCartItems .cartItem .obs {
+.cart-page .cart .listedCartItems .cartItem .obs {
   font-size: 13px;
   color: #959595;
 }
-.order .cart-page .cart .listedCartItems .cartItem .quantidade {
+.cart-page .cart .listedCartItems .cartItem .quantidade {
   display: flex;
   width: 60px;
   justify-content: space-around;
   font-size: 20px;
   align-items: center;
 }
-.order .cart-page .cart .listedCartItems .cartItem .quantidade div {
+.cart-page .cart .listedCartItems .cartItem .quantidade div {
   color: #fdc844;
 }
-.order .cart-page .cart .listedCartItems .cartItem .quantidade span {
+.cart-page .cart .listedCartItems .cartItem .quantidade span {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.order .cart-page .cart .listedCartItems .cartItem .quantidade span:hover {
+.cart-page .cart .listedCartItems .cartItem .quantidade span:hover {
   opacity: 0.6;
 }
-.order .cart-page .cart .listedCartItems .cartItem p {
+.cart-page .cart .listedCartItems .cartItem p {
   font-size: 20px;
   color: #fdc844;
   position: absolute;
   right: 0;
   margin-right: 20px;
 }
-.order .cart-page .cart .listedCartItems .cartItem .rect {
+.cart-page .cart .listedCartItems .cartItem .rect {
   background-color: #ffe7ab;
   display: flex;
   justify-content: center;
@@ -291,24 +292,24 @@ body {
   margin-right: 15px;
   margin-left: 10px;
 }
-.order .cart-page .cart .listedCartItems .cartItem .rect img {
+.cart-page .cart .listedCartItems .cartItem .rect img {
   width: 80px;
 }
-.order .cart-page .cart .listedCartItems .cartItem .rect-name {
+.cart-page .cart .listedCartItems .cartItem .rect-name {
   display: flex;
   flex-direction: column;
   gap: 8px;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.order .cart-page .cart .listedCartItems .cartItem .rect-name button {
+.cart-page .cart .listedCartItems .cartItem .rect-name button {
   background: none;
   border: none;
   color: #959595;
   text-decoration: underline;
   cursor: pointer;
 }
-.order .cart-page .cart .info-total {
+.cart-page .cart .info-total {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -316,11 +317,11 @@ body {
   margin-top: 20px;
   margin-bottom: 25px;
 }
-.order .cart-page .cart .info-total p {
+.cart-page .cart .info-total p {
   color: #fdc844;
   font-size: 20px;
 }
-.order .cart-page .cart .info-total button {
+.cart-page .cart .info-total button {
   margin-top: 20px;
   width: 80%;
   height: 45px;
@@ -332,7 +333,72 @@ body {
   transition: all 0.3s ease;
   font-size: 17px;
 }
-.order .cart-page .cart .info-total button:hover {
+.cart-page .cart .info-total button:hover {
+  background-color: #f9628a;
+}
+
+.payment {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+.payment .column-pay {
+  width: 50%;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 45px;
+  align-items: center;
+}
+.payment .column-pay span {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 70px;
+  align-self: flex-start;
+}
+.payment .column-pay span:hover {
+  opacity: 0.8;
+}
+.payment .column-pay .form-pay {
+  background-color: #fafafa;
+  width: 100%;
+  align-self: center;
+  border-radius: 5px;
+  color: rgb(48, 45, 45);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 10px;
+}
+.payment .column-pay .form-pay input[type=text], .payment .column-pay .form-pay input[type=tel] {
+  width: 60%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.payment .column-pay .form-pay .pagamento, .payment .column-pay .form-pay .endereco {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.payment .column-pay .form-pay button {
+  margin-top: 20px;
+  width: 40%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff2351;
+  color: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 17px;
+}
+.payment .column-pay .form-pay button:hover {
   background-color: #f9628a;
 }
 

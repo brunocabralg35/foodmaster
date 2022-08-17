@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import MyContext from "../MyContext";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const { user } = useContext(MyContext);
@@ -13,6 +14,8 @@ function Cart() {
 
   const [obsIndex, setObsIndex] = useState();
   const [obsInput, setObsInput] = useState();
+
+  const navigate = useNavigate();
 
   function getFinalPrice() {
     let soma = 0;
@@ -183,7 +186,13 @@ function Cart() {
         ) : (
           <div className="info-total">
             <p>Total: R${getFinalPrice()}</p>
-            <button>Finalizar compra</button>
+            <button
+              onClick={() => {
+                navigate("/payment");
+              }}
+            >
+              Finalizar compra
+            </button>
           </div>
         )}
       </div>
