@@ -1,11 +1,26 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import MyContext from "../MyContext";
 
 function Payment() {
   const navigate = useNavigate();
-  const { user } = useContext(MyContext);
+  const { user, setUser } = useContext(MyContext);
+  const [nome, setNome] = useState("");
+
+  //radio buttons de endereco
+  const [selectedEndereco, setSelectedEndereco] = useState("retirar");
+
+  const handleEnderecoChange = (event) => {
+    setSelectedEndereco(event.target.value);
+  };
+
+  //radio buttons de forma de pagamento
+  const [selectedPagamento, setSelectedPagamento] = useState("dinheiro");
+
+  const handlePagamentoChange = (event) => {
+    setSelectedPagamento(event.target.value);
+  };
 
   return (
     <div className="payment">
@@ -21,12 +36,27 @@ function Payment() {
         <div className="form-pay">
           <h2>Seus dados</h2>
           <h3>Nome</h3>
-          <input
-            type="text"
-            id="nome"
-            placeholder="Digite seu nome"
-            value={user}
-          />
+          {user.length === 0 ? (
+            <input
+              type="text"
+              id="nome"
+              placeholder="Digite seu nome"
+              value={nome}
+              onChange={(e) => {
+                setNome(e.target.value);
+              }}
+            />
+          ) : (
+            <input
+              type="text"
+              id="nome"
+              placeholder="Digite seu nome"
+              value={user}
+              className="userInputDone"
+              disabled
+            />
+          )}
+
           <h3>Celular</h3>
           <input type="tel" id="tel" placeholder="Digite seu celular" />
           <h3>Endereço</h3>
@@ -35,34 +65,58 @@ function Payment() {
               type="radio"
               name="endereco"
               id="retirar"
-              value="Retirar na loja"
+              value="retirar"
+              checked={selectedEndereco === "retirar"}
+              onChange={handleEnderecoChange}
             />
-            <label for="retirar">Retirar na loja</label>
+            <label htmlFor="retirar">Retirar na loja</label>
 
             <input
               type="radio"
               name="endereco"
               id="delivery"
-              value="Delivery"
+              value="delivery"
+              checked={selectedEndereco === "delivery"}
+              onChange={handleEnderecoChange}
             />
-            <label for="delivery">Delivery</label>
+            <label htmlFor="delivery">Delivery</label>
           </div>
+          {selectedEndereco === "delivery" ? (
+            <p className="add_address">Adicionar endereço</p>
+          ) : (
+            ""
+          )}
           <h3>Pagamento</h3>
           <p>Método de pagamento</p>
           <div className="pagamento">
             <input
               type="radio"
               id="dinheiro"
-              name="endereco"
-              value="Dinheiro"
+              name="pagamento"
+              value="dinheiro"
+              checked={selectedPagamento === "dinheiro"}
+              onChange={handlePagamentoChange}
             />
-            <label for="dinheiro">Dinheiro</label>
+            <label htmlFor="dinheiro">Dinheiro</label>
 
-            <input type="radio" id="cartao" name="endereco" value="Cartão" />
-            <label for="cartao">Cartão</label>
+            <input
+              type="radio"
+              id="cartao"
+              name="pagamento"
+              value="cartao"
+              checked={selectedPagamento === "cartao"}
+              onChange={handlePagamentoChange}
+            />
+            <label htmlFor="cartao">Cartão</label>
           </div>
 
-          <button>Concluir pedido</button>
+          <button
+            onClick={() => {
+              setUser(nome);
+            }}
+          >
+            Concluir pedido
+          </button>
         </div>
       </div>
     </div>
