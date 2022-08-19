@@ -2,11 +2,13 @@ import { useContext, useState } from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import MyContext from "../MyContext";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function Payment() {
   const navigate = useNavigate();
   const { user, setUser } = useContext(MyContext);
   const [nome, setNome] = useState("");
+  const [tel, setTel] = useState("");
 
   //radio buttons de endereco
   const [selectedEndereco, setSelectedEndereco] = useState("retirar");
@@ -15,6 +17,9 @@ function Payment() {
     setSelectedEndereco(event.target.value);
   };
 
+  //modal para endereco
+  const [enderecoModal, setEnderecoModal] = useState(false);
+
   //radio buttons de forma de pagamento
   const [selectedPagamento, setSelectedPagamento] = useState("dinheiro");
 
@@ -22,8 +27,55 @@ function Payment() {
     setSelectedPagamento(event.target.value);
   };
 
+  const mascaraTelefone = (valor) => {
+    valor = valor.replace(/\D/g, "");
+    valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+    valor = valor.replace(/(\d)(\d{4})$/, "$1-$2");
+    setTel(valor);
+  };
+
   return (
     <div className="payment">
+      {!enderecoModal ? (
+        <span></span>
+      ) : (
+        <div className="bg-modal">
+          <div className="modal-delete">
+            <AiFillCloseCircle
+              size={30}
+              className="close-btn"
+              onClick={() => {
+                setEnderecoModal(false);
+              }}
+            />
+            <h2>Adicionar endereço</h2>
+            <input type="text" placeholder="CEP" />
+            <input type="text" placeholder="Cidade" />
+            <div className="inputs-rua">
+              <input type="text" placeholder="Rua" />
+              <input type="number" placeholder="Número" />
+            </div>
+
+            <div className="btns-modal-payment">
+              <button
+                onClick={() => {
+                  setEnderecoModal(false);
+                }}
+              >
+                Cancelar
+              </button>
+              <button
+                onClick={() => {
+                  setEnderecoModal(false);
+                }}
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="column-pay">
         <span
           onClick={() => {
@@ -58,7 +110,16 @@ function Payment() {
           )}
 
           <h3>Celular</h3>
-          <input type="tel" id="tel" placeholder="Digite seu celular" />
+          <input
+            type="tel"
+            id="tel"
+            placeholder="Digite seu celular"
+            value={tel}
+            onChange={(e) => {
+              mascaraTelefone(e.target.value);
+            }}
+            maxLength={15}
+          />
           <h3>Endereço</h3>
           <div className="endereco">
             <input
@@ -82,7 +143,14 @@ function Payment() {
             <label htmlFor="delivery">Delivery</label>
           </div>
           {selectedEndereco === "delivery" ? (
-            <p className="add_address">Adicionar endereço</p>
+            <p
+              onClick={() => {
+                setEnderecoModal(true);
+              }}
+              className="add_address"
+            >
+              Adicionar endereço
+            </p>
           ) : (
             ""
           )}

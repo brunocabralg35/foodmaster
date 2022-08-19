@@ -343,6 +343,99 @@ body {
   justify-content: center;
   align-items: center;
 }
+.payment .bg-modal {
+  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(56, 54, 54, 0.4784313725);
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment .bg-modal .modal-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 400px;
+  width: 600px;
+  position: relative;
+  border-radius: 8px;
+  gap: 15px;
+}
+.payment .bg-modal .modal-delete h2 {
+  margin-bottom: 10px;
+}
+.payment .bg-modal .modal-delete .inputs-rua {
+  display: flex;
+  width: 90%;
+  gap: 10px;
+}
+.payment .bg-modal .modal-delete .inputs-rua input[type=text] {
+  width: 70%;
+}
+.payment .bg-modal .modal-delete .inputs-rua input[type=number] {
+  width: 30%;
+}
+.payment .bg-modal .modal-delete .inputs-rua input::-webkit-outer-spin-button,
+.payment .bg-modal .modal-delete .inputs-rua input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.payment .bg-modal .modal-delete .inputs-rua input[type=number] {
+  -moz-appearance: textfield;
+}
+.payment .bg-modal .modal-delete input[type=text],
+.payment .bg-modal .modal-delete input[type=number] {
+  width: 90%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.payment .bg-modal .modal-delete .close-btn {
+  position: absolute;
+  right: -6px;
+  top: -10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.payment .bg-modal .modal-delete .close-btn:hover {
+  opacity: 0.8;
+}
+.payment .bg-modal .modal-delete .btns-modal-payment {
+  display: flex;
+  width: 90%;
+  gap: 10px;
+}
+.payment .bg-modal .modal-delete .btns-modal-payment button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff2351;
+  color: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  margin: 5px 0px 0px 0;
+}
+.payment .bg-modal .modal-delete .btns-modal-payment button:first-of-type {
+  background-color: transparent;
+  color: #f9628a;
+  border: 1px solid #ff2351;
+}
+.payment .bg-modal .modal-delete .btns-modal-payment button:hover {
+  background-color: #f9628a;
+  color: #ffffff;
+}
 .payment .column-pay {
   width: 40%;
   color: #ffffff;
@@ -380,7 +473,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-.payment .column-pay .form-pay input[type=text], .payment .column-pay .form-pay input[type=tel] {
+.payment .column-pay .form-pay input[type=text],
+.payment .column-pay .form-pay input[type=tel] {
   width: 90%;
   padding: 15px;
   border-radius: 8px;
@@ -403,7 +497,8 @@ body {
 .payment .column-pay .form-pay .add_address:hover {
   opacity: 0.7;
 }
-.payment .column-pay .form-pay .pagamento, .payment .column-pay .form-pay .endereco {
+.payment .column-pay .form-pay .pagamento,
+.payment .column-pay .form-pay .endereco {
   display: flex;
   gap: 10px;
   align-items: center;
